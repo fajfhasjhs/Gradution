@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,8 +33,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     GreetingText(
                         message = "Happy Graduation Anne!",
-                        from = "From Jago",
-                        modifier = Modifier.padding(8.dp))
+                        from = "From Fais",
+                        modifier = Modifier.padding(8.dp),
+                        harapan = "Your life is your story, and the adventure ahead of you is the journey to fulfill your own purpose and potential.")
                 }
             }
         }
@@ -41,24 +43,33 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
-    Column (
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier
-            ){
-        Text(
-            text = message,
-            fontSize = 75.sp,
-            lineHeight = 110.sp,
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = from,
-            fontSize = 28.sp,
-            modifier = Modifier
-                .padding(16.dp)
-                .align(alignment = Alignment.End)
-        )
+fun GreetingText(message: String, from: String, harapan: String, modifier: Modifier = Modifier) {
+    Surface(color = Color.Yellow) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            modifier = modifier
+        ) {
+            Text(
+                text = message,
+                fontSize = 75.sp,
+                lineHeight = 90.sp,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                text = harapan,
+                fontSize = 32.sp,
+                lineHeight = 40.sp,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                text = from,
+                fontSize = 25.sp,
+                modifier = Modifier
+                    .padding(20.dp)
+                    .align(alignment = Alignment.End)
+            )
+
+        }
     }
 }
 
@@ -67,6 +78,6 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     Graduated_14MarTheme {
         GreetingText(message = "Happy Graduation Anne!",
-        from = "From Jago")
+        from = "From Fais", harapan = "Your life is your story, and the adventure ahead of you is the journey to fulfill your own purpose and potential.")
     }
 }
