@@ -60,7 +60,7 @@ fun GreetingText(message: String, from: String, harapan: String, modifier: Modif
         ) {
             Text(
                 text = message,
-                fontSize = 70.sp,
+                fontSize = 69.sp,
                 fontWeight = FontWeight.Bold,
                 lineHeight = 80.sp,
                 textAlign = TextAlign.Center
